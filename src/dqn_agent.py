@@ -1,5 +1,5 @@
 import numpy as np
-from dqn_model import DQNNetwork
+from dqn_model import DQNetwork
 from replay_buffer import ReplayBuffer
 
 class DQNAgent:    
@@ -16,8 +16,8 @@ class DQNAgent:
         self.update_target_every = 10  # episodes
         
         # networks
-        self.policy_network = DQNNetwork(state_size, action_size, self.learning_rate)
-        self.target_network = DQNNetwork(state_size, action_size, self.learning_rate)
+        self.policy_network = DQNetwork(state_size, action_size, self.learning_rate)
+        self.target_network = DQNetwork(state_size, action_size, self.learning_rate)
         self.update_target_network()
         
         self.replay_buffer = ReplayBuffer(max_size=100000)
