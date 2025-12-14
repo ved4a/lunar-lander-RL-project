@@ -1,5 +1,4 @@
 import gymnasium as gym
-import numpy as np
 import time
 
 def explore_lunar_lander():
