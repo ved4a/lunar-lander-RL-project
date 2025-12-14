@@ -7,7 +7,7 @@
 -   **Ranges**:
     -   Position: -2.5 to 2.5 (x), -2.5 to 2.5 (y)
     -   Velocity: -10 to 10 (both directions)
-    -   Angle: -π to π radians
+    -   Angle: -2π to 2π radians
     -   Leg contact: 0 (no contact) or 1 (contact)
 
 ## Action Space
@@ -72,7 +72,6 @@ This shows the environment is stochastic, with randomness coming from:
 -   Slight horizontal drift quickly becomes unrecoverable without precise counter-thrust.
 -   Excessive rotation makes it impossible to land upright.
 -   The landing pad is small target.
--   Fuel usage penalty makes hovering expensive.
 
 ### Engine Penalties Accumulate Quickly
 
