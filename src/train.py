@@ -11,6 +11,15 @@ def train_lunar_lander(episodes=1000, render_every=100, config_name="default"):
     action_size = env.action_space.n
 
     agent = DQNAgent(state_size, action_size)
+    preload_path = "data/my_lander_dataset.npz"   # <-- set to your file
+    try:
+        agent.replay_buffer.load_from_file(preload_path)
+        print(f"Preloaded replay buffer from {preload_path}. Buffer size: {agent.replay_buffer.size()}")
+        # If you want training to start earlier, you can reduce train_start
+        # e.g., agent.train_start = min(agent.train_start, agent.replay_buffer.size())
+    except Exception as e:
+        print(f"No preload dataset loaded (looking for {preload_path}): {e}")
+
 
     scores = []
     avg_scores = []
